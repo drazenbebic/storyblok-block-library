@@ -1,0 +1,19 @@
+{
+  "name": "storyblok-block-library",
+  "version": "0.1.0",
+  "private": true,
+  "repository": "git@github.com:drazenbebic/storyblok-block-library.git",
+  "author": "Drazen Bebic <drazen@bebic.at>",
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.3"
+  }
+}
