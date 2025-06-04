@@ -1,9 +1,11 @@
+import { FieldType } from '../../enums';
+
 export const columnSchema = () => {
   return {
     name: 'column',
     schema: {
       span: {
-        type: 'option',
+        type: FieldType.Option,
         default_value: 12,
         required: true,
         options: [
@@ -58,23 +60,23 @@ export const columnSchema = () => {
         ],
       },
       contentPadding: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       marginTop: {
-        type: 'option',
+        type: FieldType.Option,
         source: 'external',
         external_datasource:
           'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
       },
       marginBottom: {
-        type: 'option',
+        type: FieldType.Option,
         source: 'external',
         external_datasource:
           'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
       },
       blocks: {
-        type: 'bloks',
+        type: FieldType.Bloks,
         restrict_components: true,
         component_whitelist: ['column'],
       },

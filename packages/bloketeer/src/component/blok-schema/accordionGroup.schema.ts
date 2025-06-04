@@ -1,13 +1,15 @@
+import { FieldType } from '../../enums';
+
 export const accordionGroupSchema = () => {
   return {
     name: 'accordionGroup',
     schema: {
       allowMultiple: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       blocks: {
-        type: 'bloks',
+        type: FieldType.Bloks,
         restrict_components: true,
         component_whitelist: ['accordion'],
       },

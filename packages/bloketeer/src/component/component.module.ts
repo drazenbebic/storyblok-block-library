@@ -5,7 +5,7 @@ export const componentModule = (program: Command) => {
   const controller = new ComponentController();
   const component = program
     .command('component')
-    .description('CRUD for Storybook components (Management API)')
+    .description('CRUD for Storyblok Components (Management API)')
     .action(() => component.outputHelp());
 
   component

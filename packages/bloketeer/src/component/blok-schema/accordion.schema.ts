@@ -1,3 +1,5 @@
+import { FieldType } from '../../enums';
+
 export const accordionSchema = ({
   translatable,
 }: {
@@ -7,16 +9,16 @@ export const accordionSchema = ({
     name: 'accordion',
     schema: {
       title: {
-        type: 'text',
+        type: FieldType.Text,
         required: true,
         translatable,
       },
       open: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       blocks: {
-        type: 'bloks',
+        type: FieldType.Bloks,
       },
     },
   };

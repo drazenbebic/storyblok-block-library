@@ -1,70 +1,49 @@
+import { FieldType } from '../../enums';
+import { options } from '../../utils';
+
 export const buttonSchema = ({ translatable }: { translatable: boolean }) => {
   return {
     name: 'button',
     schema: {
       content: {
+        type: FieldType.Text,
         required: true,
-        type: 'text',
         translatable,
       },
       href: {
+        type: FieldType.Text,
         required: true,
-        type: 'text',
       },
       size: {
-        type: 'option',
+        type: FieldType.Option,
         default_value: 'lg',
-        options: [
-          {
-            name: 'Small',
-            value: 'sm',
-          },
-          {
-            name: 'Medium',
-            value: 'md',
-          },
-          {
-            name: 'Large',
-            value: 'lg',
-          },
-        ],
+        options: options([
+          ['Small', 'sm'],
+          ['Medium', 'md'],
+          ['Large', 'lg'],
+        ]),
       },
       target: {
-        type: 'option',
+        type: FieldType.Option,
         default_value: '_self',
-        options: [
-          {
-            name: 'Self',
-            value: '_self',
-          },
-          {
-            name: 'Blank',
-            value: '_blank',
-          },
-        ],
+        options: options([
+          ['Self', '_self'],
+          ['Blank', '_blank'],
+        ]),
       },
       title: {
-        type: 'text',
+        type: FieldType.Text,
         translatable,
       },
       variant: {
-        type: 'option',
+        type: FieldType.Option,
         required: true,
         default_value: 'primary',
-        options: [
-          {
-            name: 'Primary',
-            value: 'primary',
-          },
-          {
-            name: 'Secondary',
-            value: 'secondary',
-          },
-          {
-            name: 'Ghost',
-            value: 'ghost',
-          },
-        ],
+        options: options([
+          ['Primary', 'primary'],
+          ['Secondary', 'secondary'],
+          ['Ghost', 'ghost'],
+        ]),
       },
     },
   };

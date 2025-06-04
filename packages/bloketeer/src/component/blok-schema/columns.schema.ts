@@ -1,43 +1,34 @@
+import { FieldType } from '../../enums';
+import { options } from '../../utils';
+
 export const columnsSchema = () => {
   return {
     name: 'columns',
     schema: {
       align: {
-        type: 'option',
+        type: FieldType.Option,
         default_value: 'center',
-        options: [
-          {
-            name: 'Start',
-            value: 'start',
-          },
-          {
-            name: 'End',
-            value: 'end',
-          },
-          {
-            name: 'Center',
-            value: 'center',
-          },
-          {
-            name: 'Stretch',
-            value: 'stretch',
-          },
-        ],
+        options: options([
+          ['Start', 'start'],
+          ['End', 'end'],
+          ['Center', 'center'],
+          ['Stretch', 'stretch'],
+        ]),
       },
       fullWidth: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       noPadding: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       striped: {
-        type: 'boolean',
+        type: FieldType.Boolean,
         default_value: false,
       },
       blocks: {
-        type: 'bloks',
+        type: FieldType.Bloks,
         restrict_components: true,
         component_whitelist: ['column'],
       },
