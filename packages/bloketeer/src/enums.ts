@@ -58,3 +58,8 @@ export enum FieldType {
   /** File (old): a upload field for a single file */
   File = 'file',
 }
+
+export enum ComponentColors {
+  CONTENT_DISPLAY = '#2db47d',
+  STRUCTURING = '#374dc3',
+}

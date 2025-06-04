@@ -1,9 +1,16 @@
 import { options } from '../../utils';
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
+import { Component } from '../../types';
 
-export const richTextSchema = ({ translatable }: { translatable: boolean }) => {
+export const richTextSchema = ({
+  translatable,
+}: {
+  translatable: boolean;
+}): Component => {
   return {
     name: 'richText',
+    icon: 'block-text-l',
+    color: ComponentColors.CONTENT_DISPLAY,
     schema: {
       align: {
         type: FieldType.Option,

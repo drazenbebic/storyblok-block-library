@@ -1,9 +1,16 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
 import { options } from '../../utils';
+import { Component } from '../../types';
 
-export const headingSchema = ({ translatable }: { translatable: boolean }) => {
+export const headingSchema = ({
+  translatable,
+}: {
+  translatable: boolean;
+}): Component => {
   return {
     name: 'heading',
+    icon: 'block-text-img-t-l',
+    color: ComponentColors.CONTENT_DISPLAY,
     schema: {
       align: {
         type: FieldType.Options,

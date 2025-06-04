@@ -1,9 +1,16 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
 import { options } from '../../utils';
+import { Component } from '../../types';
 
-export const buttonSchema = ({ translatable }: { translatable: boolean }) => {
+export const buttonSchema = ({
+  translatable,
+}: {
+  translatable: boolean;
+}): Component => {
   return {
     name: 'button',
+    icon: 'block-arrow-pointer',
+    color: ComponentColors.CONTENT_DISPLAY,
     schema: {
       content: {
         type: FieldType.Text,

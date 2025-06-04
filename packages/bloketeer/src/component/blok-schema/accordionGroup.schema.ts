@@ -1,8 +1,11 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
+import { Component } from '../../types';
 
-export const accordionGroupSchema = () => {
+export const accordionGroupSchema = (): Component => {
   return {
     name: 'accordionGroup',
+    icon: 'block-text-img-c',
+    color: ComponentColors.CONTENT_DISPLAY,
     schema: {
       allowMultiple: {
         type: FieldType.Boolean,

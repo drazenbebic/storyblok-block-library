@@ -1,63 +1,31 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
+import { options } from '../../utils';
+import { Component } from '../../types';
 
-export const columnSchema = () => {
+export const columnSchema = (): Component => {
   return {
     name: 'column',
+    icon: 'block-table',
+    color: ComponentColors.STRUCTURING,
     schema: {
       span: {
         type: FieldType.Option,
         default_value: 12,
         required: true,
-        options: [
-          {
-            name: '1/12',
-            value: 1,
-          },
-          {
-            name: '2/12',
-            value: 2,
-          },
-          {
-            name: '3/12',
-            value: 3,
-          },
-          {
-            name: '4/12',
-            value: 4,
-          },
-          {
-            name: '5/12',
-            value: 5,
-          },
-          {
-            name: '6/12',
-            value: 6,
-          },
-          {
-            name: '7/12',
-            value: 7,
-          },
-          {
-            name: '8/12',
-            value: 8,
-          },
-          {
-            name: '9/12',
-            value: 9,
-          },
-          {
-            name: '10/12',
-            value: 10,
-          },
-          {
-            name: '11/12',
-            value: 11,
-          },
-          {
-            name: '12/12',
-            value: 12,
-          },
-        ],
+        options: options([
+          ['1/12', 1],
+          ['2/12', 2],
+          ['3/12', 3],
+          ['4/12', 4],
+          ['5/12', 5],
+          ['6/12', 6],
+          ['7/12', 7],
+          ['8/12', 8],
+          ['9/12', 9],
+          ['10/12', 10],
+          ['11/12', 11],
+          ['12/12', 12],
+        ]),
       },
       contentPadding: {
         type: FieldType.Boolean,

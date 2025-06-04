@@ -1,9 +1,16 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
 import { options } from '../../utils';
+import { Component } from '../../types';
 
-export const imageSchema = ({ translatable }: { translatable: boolean }) => {
+export const imageSchema = ({
+  translatable,
+}: {
+  translatable: boolean;
+}): Component => {
   return {
     name: 'image',
+    icon: 'block-image',
+    color: ComponentColors.CONTENT_DISPLAY,
     schema: {
       asset: {
         type: FieldType.Asset,
@@ -18,7 +25,7 @@ export const imageSchema = ({ translatable }: { translatable: boolean }) => {
         translatable,
       },
       loading: {
-        type: 'option',
+        type: FieldType.Option,
         default_value: 'lazy',
         options: options([
           ['Lazy', 'lazy'],

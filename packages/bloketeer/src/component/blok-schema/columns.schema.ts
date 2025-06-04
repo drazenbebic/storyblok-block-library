@@ -1,9 +1,12 @@
-import { FieldType } from '../../enums';
+import { ComponentColors, FieldType } from '../../enums';
 import { options } from '../../utils';
+import { Component } from '../../types';
 
-export const columnsSchema = () => {
+export const columnsSchema = (): Component => {
   return {
     name: 'columns',
+    icon: 'block-table-2',
+    color: ComponentColors.STRUCTURING,
     schema: {
       align: {
         type: FieldType.Option,
