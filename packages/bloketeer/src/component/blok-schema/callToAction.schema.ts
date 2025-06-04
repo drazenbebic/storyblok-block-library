@@ -1,0 +1,34 @@
+import { Component } from '../../types';
+import { ComponentColors, FieldType } from '../../enums';
+
+export const callToActionSchema = (): Component => ({
+  name: 'callToAction',
+  icon: 'block-arrow-pointer',
+  color: ComponentColors.CONTENT_DISPLAY,
+  schema: {
+    heading: {
+      type: FieldType.Bloks,
+      required: true,
+      minimum: 1,
+      maximum: 1,
+      restrict_components: true,
+      component_whitelist: ['heading'],
+    },
+    content: {
+      type: FieldType.Bloks,
+      required: true,
+      minimum: 1,
+      maximum: 1,
+      restrict_components: true,
+      component_whitelist: ['richText'],
+    },
+    buttons: {
+      type: FieldType.Bloks,
+      required: true,
+      minimum: 1,
+      maximum: 2,
+      restrict_components: true,
+      component_whitelist: ['button'],
+    },
+  },
+});

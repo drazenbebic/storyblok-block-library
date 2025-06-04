@@ -1,11 +1,5 @@
 import process from 'node:process';
-
-export interface CreateComponentDto {
-  component: {
-    name: string;
-    schema: any;
-  };
-}
+import { Component } from './types';
 
 class StoryblokService {
   private readonly baseUrl: string;
@@ -18,7 +12,7 @@ class StoryblokService {
     this.spaceId = process.env.STORYBLOK_SPACE_ID!;
   }
 
-  public createComponent = async (component: CreateComponentDto) => {
+  public createComponent = async (component: Component) => {
     return fetch(`${this.baseUrl}/v1/spaces/${this.spaceId}/components`, {
       method: 'POST',
       headers: {

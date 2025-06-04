@@ -2,20 +2,23 @@ import StoryblokService from '../storyblok.service';
 import { accordionSchema } from './blok-schema/accordion.schema';
 import { accordionGroupSchema } from './blok-schema/accordionGroup.schema';
 import { buttonSchema } from './blok-schema/button.schema';
+import { callToActionSchema } from './blok-schema/callToAction.schema';
 import { cardSchema } from './blok-schema/card.schema';
 import { columnSchema } from './blok-schema/column.schema';
 import { columnsSchema } from './blok-schema/columns.schema';
+import { flexboxSchema } from './blok-schema/flexbox';
 import { headingSchema } from './blok-schema/heading.schema';
 import { imageSchema } from './blok-schema/image.schema';
 import { richTextSchema } from './blok-schema/richText.schema';
 import PQueue from 'p-queue';
 import chalk from 'chalk';
+import { Component } from '../types';
 
 export class ComponentController {
   private readonly storyblokService: StoryblokService;
   private readonly bloks: Record<
     string,
-    (opts: { translatable: boolean }) => any
+    (opts: { translatable: boolean }) => Component
   >;
 
   constructor() {
@@ -24,9 +27,11 @@ export class ComponentController {
       accordion: accordionSchema,
       accordionGroup: accordionGroupSchema,
       button: buttonSchema,
+      callToAction: callToActionSchema,
       card: cardSchema,
       column: columnSchema,
       columns: columnsSchema,
+      flexbox: flexboxSchema,
       heading: headingSchema,
       image: imageSchema,
       richText: richTextSchema,
