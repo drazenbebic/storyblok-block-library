@@ -37,3 +37,9 @@ export interface ComponentSchemaOptions {
   name: string;
   value: string | number;
 }
+
+export interface Space {
+  name: string;
+  domain?: string;
+  story_published_hook?: string;
+}

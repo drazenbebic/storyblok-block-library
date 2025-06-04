@@ -1,5 +1,5 @@
 import process from 'node:process';
-import { Component } from './types';
+import { Component, Space } from './types';
 
 class StoryblokService {
   private readonly baseUrl: string;
@@ -20,6 +20,17 @@ class StoryblokService {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ component }),
+    });
+  };
+
+  public createSpace = async (space: Space) => {
+    return fetch(`${this.baseUrl}/v1/spaces`, {
+      method: 'POST',
+      headers: {
+        Authorization: this.accessToken,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ space }),
     });
   };
 }

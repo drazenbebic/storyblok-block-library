@@ -9,12 +9,7 @@ export const spaceModule = (program: Command) => {
     .action(() => component.outputHelp());
 
   component
-    .command('create')
+    .command('create <name>')
     .description('Creates Storyblok space.')
-    .option(
-      '--translatable',
-      'When passed, translatable blocks will be enabled',
-      false,
-    )
     .action(controller.create.bind(controller));
 };
