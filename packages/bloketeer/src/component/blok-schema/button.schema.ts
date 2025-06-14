@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { marginField, options } from '../../utils';
+import { spacingField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const buttonSchema = ({
@@ -53,8 +53,8 @@ export const buttonSchema = ({
           ['Ghost', 'ghost'],
         ]),
       },
-      marginTop: marginField,
-      marginBottom: marginField,
+      marginTop: spacingField,
+      marginBottom: spacingField,
     },
   };
 };

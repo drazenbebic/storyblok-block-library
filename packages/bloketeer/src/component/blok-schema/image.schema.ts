@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { marginField, options } from '../../utils';
+import { spacingField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const imageSchema = ({
@@ -32,8 +32,8 @@ export const imageSchema = ({
           ['Eager', 'eager'],
         ]),
       },
-      marginTop: marginField,
-      marginBottom: marginField,
+      marginTop: spacingField,
+      marginBottom: spacingField,
     },
   };
 };

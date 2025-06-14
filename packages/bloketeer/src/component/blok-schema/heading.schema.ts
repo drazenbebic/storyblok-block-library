@@ -1,5 +1,12 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { marginField, options } from '../../utils';
+import {
+  spacingField,
+  options,
+  textAlignOptions,
+  textColorOptions,
+  textSizeOptions,
+  textVariantOptions,
+} from '../../utils';
 import { Component } from '../../types';
 
 export const headingSchema = ({
@@ -15,11 +22,7 @@ export const headingSchema = ({
       align: {
         type: FieldType.Options,
         default_value: 'left',
-        options: options([
-          ['Left', 'left'],
-          ['Center', 'center'],
-          ['Right', 'right'],
-        ]),
+        options: textAlignOptions,
       },
       content: {
         type: FieldType.Text,
@@ -41,43 +44,20 @@ export const headingSchema = ({
       color: {
         type: FieldType.Options,
         default_value: 'accent',
-        options: options([
-          ['Default', 'default'],
-          ['Accent', 'accent'],
-          ['Light', 'light'],
-          ['Dark', 'dark'],
-          ['Lighter', 'lighter'],
-          ['White', 'white'],
-        ]),
+        options: textColorOptions,
       },
       size: {
         type: FieldType.Options,
         default_value: 'lg',
-        options: options([
-          ['2x Extra Small', '2xs'],
-          ['Extra Small', 'xs'],
-          ['Small', 'sm'],
-          ['Medium', 'md'],
-          ['Large', 'lg'],
-          ['Extra Large', 'xl'],
-          ['2x Extra Large', '2xl'],
-          ['3x Extra Large', '3xl'],
-          ['4x Extra Large', '4xl'],
-          ['5x Extra Large', '5xl'],
-          ['6x Extra Large', '6xl'],
-          ['7x Extra Large', '7xl'],
-        ]),
+        options: textSizeOptions,
       },
       variant: {
         type: FieldType.Options,
         default_value: 'heading',
-        options: options([
-          ['Copy', 'copy'],
-          ['Heading', 'heading'],
-        ]),
+        options: textVariantOptions,
       },
-      marginTop: marginField,
-      marginBottom: marginField,
+      marginTop: spacingField,
+      marginBottom: spacingField,
     },
   };
 };

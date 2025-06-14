@@ -1,6 +1,6 @@
 import { ComponentColors, FieldType } from '../../enums';
 import { Component } from '../../types';
-import { marginField } from '../../utils';
+import { spacingField } from '../../utils';
 
 export const accordionSchema = ({
   translatable,
@@ -24,8 +24,8 @@ export const accordionSchema = ({
       blocks: {
         type: FieldType.Bloks,
       },
-      marginTop: marginField,
-      marginBottom: marginField,
+      marginTop: spacingField,
+      marginBottom: spacingField,
     },
   };
 };

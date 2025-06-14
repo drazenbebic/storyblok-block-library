@@ -1,6 +1,6 @@
 import { Component } from '../../types';
 import { ComponentColors, FieldType } from '../../enums';
-import { marginField } from '../../utils';
+import { spacingField } from '../../utils';
 
 export const heroSchema = (): Component => ({
   name: 'hero',
@@ -31,7 +31,7 @@ export const heroSchema = (): Component => ({
       restrict_components: true,
       component_whitelist: ['button'],
     },
-    marginTop: marginField,
-    marginBottom: marginField,
+    marginTop: spacingField,
+    marginBottom: spacingField,
   },
 });

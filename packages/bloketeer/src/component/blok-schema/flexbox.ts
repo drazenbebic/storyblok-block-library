@@ -1,6 +1,6 @@
 import { Component } from '../../types';
 import { ComponentColors, FieldType } from '../../enums';
-import { marginField, options } from '../../utils';
+import { spacingField, options } from '../../utils';
 
 export const flexboxSchema = (): Component => ({
   name: 'flexbox',
@@ -25,12 +25,7 @@ export const flexboxSchema = (): Component => ({
         ['Column (Reverse)', 'col-reverse'],
       ]),
     },
-    gap: {
-      type: FieldType.Option,
-      source: 'external',
-      external_datasource:
-        'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-    },
+    gap: spacingField,
     inline: {
       type: FieldType.Boolean,
       default_value: false,
@@ -58,7 +53,7 @@ export const flexboxSchema = (): Component => ({
     bloks: {
       type: FieldType.Bloks,
     },
-    marginTop: marginField,
-    marginBottom: marginField,
+    marginTop: spacingField,
+    marginBottom: spacingField,
   },
 });
