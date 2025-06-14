@@ -9,6 +9,11 @@ export const componentModule = (program: Command) => {
     .action(() => component.outputHelp());
 
   component
+    .command('list')
+    .description('List all components within a Storyblok space.')
+    .action(controller.list.bind(controller));
+
+  component
     .command('create [blok]')
     .description(
       'Creates Storyblok components. If [blok] is provided only that blok is created; otherwise all blocks are created.',

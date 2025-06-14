@@ -40,6 +40,27 @@ export class ComponentController {
     };
   }
 
+  public list = async () => {
+    try {
+      const response = await this.storyblokService.listComponents();
+
+      if (response.ok) {
+        const data = await response.json();
+        console.table(
+          data.components.map(({ name }: { name: string }) => name),
+        );
+        console.log(chalk.green(`✅ Bloks fetched successfully`));
+      } else {
+        console.log(chalk.red(`❌ Blok fetching failed`));
+        const data = await response.json();
+        console.log(chalk.yellow(`   ↳ Response: ${JSON.stringify(data)}`));
+      }
+    } catch (err: any) {
+      console.log(chalk.magenta(`⚠️ Unexpected error:`));
+      console.log(chalk.yellow(`   ↳ ${err.message || err}`));
+    }
+  };
+
   public create = async (
     blok: string,
     { translatable }: { translatable: boolean },

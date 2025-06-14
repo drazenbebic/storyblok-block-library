@@ -12,6 +12,16 @@ class StoryblokService {
     this.spaceId = process.env.STORYBLOK_SPACE_ID!;
   }
 
+  public listComponents = async () => {
+    return fetch(`${this.baseUrl}/v1/spaces/${this.spaceId}/components`, {
+      method: 'GET',
+      headers: {
+        Authorization: this.accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
+  };
+
   public createComponent = async (component: Component) => {
     return fetch(`${this.baseUrl}/v1/spaces/${this.spaceId}/components`, {
       method: 'POST',
