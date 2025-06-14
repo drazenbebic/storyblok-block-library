@@ -1,6 +1,6 @@
 import { Component } from '../../types';
 import { ComponentColors, FieldType } from '../../enums';
-import { options } from '../../utils';
+import { marginField, options } from '../../utils';
 
 export const flexboxSchema = (): Component => ({
   name: 'flexbox',
@@ -55,20 +55,10 @@ export const flexboxSchema = (): Component => ({
         ['Wrap (Reverse)', 'wrap-reverse'],
       ]),
     },
-    marginTop: {
-      type: FieldType.Option,
-      source: 'external',
-      external_datasource:
-        'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-    },
-    marginBottom: {
-      type: FieldType.Option,
-      source: 'external',
-      external_datasource:
-        'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-    },
     bloks: {
       type: FieldType.Bloks,
     },
+    marginTop: marginField,
+    marginBottom: marginField,
   },
 });

@@ -1,5 +1,6 @@
 import { ComponentColors, FieldType } from '../../enums';
 import { Component } from '../../types';
+import { marginField } from '../../utils';
 
 export const cardSchema = (): Component => {
   return {
@@ -7,21 +8,11 @@ export const cardSchema = (): Component => {
     icon: 'block-table',
     color: ComponentColors.CONTENT_DISPLAY,
     schema: {
-      marginTop: {
-        type: FieldType.Option,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
-      marginBottom: {
-        type: FieldType.Option,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
       blocks: {
         type: FieldType.Bloks,
       },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };

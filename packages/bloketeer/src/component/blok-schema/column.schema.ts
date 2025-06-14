@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { options } from '../../utils';
+import { marginField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const columnSchema = (): Component => {
@@ -31,23 +31,13 @@ export const columnSchema = (): Component => {
         type: FieldType.Boolean,
         default_value: false,
       },
-      marginTop: {
-        type: FieldType.Option,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
-      marginBottom: {
-        type: FieldType.Option,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
       blocks: {
         type: FieldType.Bloks,
         restrict_components: true,
         component_whitelist: ['column'],
       },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };

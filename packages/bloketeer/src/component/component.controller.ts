@@ -8,6 +8,7 @@ import { columnSchema } from './blok-schema/column.schema';
 import { columnsSchema } from './blok-schema/columns.schema';
 import { flexboxSchema } from './blok-schema/flexbox';
 import { headingSchema } from './blok-schema/heading.schema';
+import { heroSchema } from './blok-schema/hero.schema';
 import { imageSchema } from './blok-schema/image.schema';
 import { richTextSchema } from './blok-schema/richText.schema';
 import PQueue from 'p-queue';
@@ -33,6 +34,7 @@ export class ComponentController {
       columns: columnsSchema,
       flexbox: flexboxSchema,
       heading: headingSchema,
+      hero: heroSchema,
       image: imageSchema,
       richText: richTextSchema,
     };

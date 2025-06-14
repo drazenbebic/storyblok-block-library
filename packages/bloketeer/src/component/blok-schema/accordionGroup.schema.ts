@@ -1,5 +1,6 @@
 import { ComponentColors, FieldType } from '../../enums';
 import { Component } from '../../types';
+import { marginField } from '../../utils';
 
 export const accordionGroupSchema = (): Component => {
   return {
@@ -16,6 +17,8 @@ export const accordionGroupSchema = (): Component => {
         restrict_components: true,
         component_whitelist: ['accordion'],
       },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };

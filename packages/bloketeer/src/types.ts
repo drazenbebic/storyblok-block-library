@@ -7,31 +7,26 @@ export interface Component {
   schema: ComponentSchema;
 }
 
-export type ComponentSchema = Record<
-  string,
-  {
-    type: FieldType;
-    required?: boolean;
-    description?: string;
-    tooltip?: boolean;
-    pos?: number;
-    translatable?: boolean;
-    default_value?: string | number | boolean;
-    display_name?: string;
-    maximum?: number;
-    minimum?: number;
-    options?: ComponentSchemaOptions[];
-    source?:
-      | 'internal_stories'
-      | 'internal'
-      | 'external'
-      | 'internal_languages';
-    restrict_components?: boolean;
-    external_datasource?: string;
-    component_whitelist?: string[];
-    component_blacklist?: string[];
-  }
->;
+export interface ComponentSchemaField {
+  type: FieldType;
+  required?: boolean;
+  description?: string;
+  tooltip?: boolean;
+  pos?: number;
+  translatable?: boolean;
+  default_value?: string | number | boolean;
+  display_name?: string;
+  maximum?: number;
+  minimum?: number;
+  options?: ComponentSchemaOptions[];
+  source?: 'internal_stories' | 'internal' | 'external' | 'internal_languages';
+  restrict_components?: boolean;
+  external_datasource?: string;
+  component_whitelist?: string[];
+  component_blacklist?: string[];
+}
+
+export type ComponentSchema = Record<string, ComponentSchemaField>;
 
 export interface ComponentSchemaOptions {
   name: string;

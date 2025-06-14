@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { options } from '../../utils';
+import { marginField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const buttonSchema = ({
@@ -19,6 +19,7 @@ export const buttonSchema = ({
       },
       href: {
         type: FieldType.Text,
+        display_name: 'URL',
         required: true,
       },
       size: {
@@ -52,6 +53,8 @@ export const buttonSchema = ({
           ['Ghost', 'ghost'],
         ]),
       },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };

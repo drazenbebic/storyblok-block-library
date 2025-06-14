@@ -10,6 +10,6 @@ export const spaceModule = (program: Command) => {
 
   component
     .command('create <name>')
-    .description('Creates Storyblok space.')
+    .description('Creates a Storyblok space.')
     .action(controller.create.bind(controller));
 };

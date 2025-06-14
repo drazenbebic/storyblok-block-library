@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { options } from '../../utils';
+import { marginField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const headingSchema = ({
@@ -45,6 +45,7 @@ export const headingSchema = ({
           ['Default', 'default'],
           ['Accent', 'accent'],
           ['Light', 'light'],
+          ['Dark', 'dark'],
           ['Lighter', 'lighter'],
           ['White', 'white'],
         ]),
@@ -75,18 +76,8 @@ export const headingSchema = ({
           ['Heading', 'heading'],
         ]),
       },
-      marginTop: {
-        type: FieldType.Options,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
-      marginBottom: {
-        type: FieldType.Options,
-        source: 'external',
-        external_datasource:
-          'https://raw.githubusercontent.com/drazenbebic/storyblok-block-library/refs/heads/main/tailwind/margin.json',
-      },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };

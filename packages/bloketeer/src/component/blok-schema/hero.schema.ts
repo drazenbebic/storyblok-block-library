@@ -2,8 +2,8 @@ import { Component } from '../../types';
 import { ComponentColors, FieldType } from '../../enums';
 import { marginField } from '../../utils';
 
-export const callToActionSchema = (): Component => ({
-  name: 'callToAction',
+export const heroSchema = (): Component => ({
+  name: 'hero',
   icon: 'block-arrow-pointer',
   color: ComponentColors.CONTENT_DISPLAY,
   schema: {

@@ -1,5 +1,5 @@
 import { ComponentColors, FieldType } from '../../enums';
-import { options } from '../../utils';
+import { marginField, options } from '../../utils';
 import { Component } from '../../types';
 
 export const columnsSchema = (): Component => {
@@ -35,6 +35,8 @@ export const columnsSchema = (): Component => {
         restrict_components: true,
         component_whitelist: ['column'],
       },
+      marginTop: marginField,
+      marginBottom: marginField,
     },
   };
 };
